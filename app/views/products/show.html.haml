@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @product.name
+%p
+  %b Company:
+  = @product.company_id
+%p
+  %b Quality rating:
+  = @product.quality_rating
+%p
+  %b Item type:
+  = @product.item_type_id
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path

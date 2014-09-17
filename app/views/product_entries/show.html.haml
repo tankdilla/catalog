@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Product:
+  = @product_entry.product_id
+%p
+  %b Price:
+  = @product_entry.price
+%p
+  %b Source:
+  = @product_entry.source
+%p
+  %b Source url:
+  = @product_entry.source_url
+
+= link_to 'Edit', edit_product_entry_path(@product_entry)
+\|
+= link_to 'Back', product_entries_path

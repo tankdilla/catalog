@@ -1,0 +1,25 @@
+%h1 Listing product_entries
+
+%table
+  %tr
+    %th Product
+    %th Price
+    %th Source
+    %th Source url
+    %th
+    %th
+    %th
+
+  - @product_entries.each do |product_entry|
+    %tr
+      %td= product_entry.product_id
+      %td= product_entry.price
+      %td= product_entry.source
+      %td= product_entry.source_url
+      %td= link_to 'Show', product_entry
+      %td= link_to 'Edit', edit_product_entry_path(product_entry)
+      %td= link_to 'Destroy', product_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product entry', new_product_entry_path
