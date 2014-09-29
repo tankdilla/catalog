@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :product_entries
-
   resources :companies
 
-  resources :products
+  resources :products do
+    resources :entries, controller: :product_entries
+  end
 
   resources :item_types
 

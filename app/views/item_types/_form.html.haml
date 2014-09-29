@@ -1,4 +1,4 @@
-= form_for @item_type do |f|
+= bootstrap_form_for @item_type, layout: :horizontal, label_col: "col-md-4", control_col: "col-md-4" do |f|
   - if @item_type.errors.any?
     #error_explanation
       %h2= "#{pluralize(@item_type.errors.count, "error")} prohibited this item_type from being saved:"
@@ -7,7 +7,6 @@
           %li= msg
 
   .field
-    = f.label :name
     = f.text_field :name
   .actions
     = f.submit 'Save'

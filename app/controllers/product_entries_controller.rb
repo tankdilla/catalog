@@ -1,4 +1,5 @@
 class ProductEntriesController < ApplicationController
+  before_action :set_product
   before_action :set_product_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /product_entries
@@ -62,6 +63,10 @@ class ProductEntriesController < ApplicationController
   end
 
   private
+    def set_product
+      @product = Product.find(params[:product_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_product_entry
       @product_entry = ProductEntry.find(params[:id])
